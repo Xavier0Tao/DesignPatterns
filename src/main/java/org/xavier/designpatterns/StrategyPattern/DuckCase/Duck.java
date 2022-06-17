@@ -21,8 +21,8 @@ public class Duck implements IFlyStrategy, IQuackStrategy {
     }
 
     @Override
-    public void fly() {
-        iFlyStrategy.fly();
+    public void fly(double height) {
+        iFlyStrategy.fly(height);
     }
 
     @Override
