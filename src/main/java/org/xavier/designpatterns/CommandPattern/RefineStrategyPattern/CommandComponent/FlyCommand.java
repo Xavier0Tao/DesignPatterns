@@ -1,35 +1,33 @@
 package org.xavier.designpatterns.CommandPattern.RefineStrategyPattern.CommandComponent;
 
-
-import org.xavier.designpatterns.StrategyPattern.DuckCase.Duck;
+import org.xavier.designpatterns.StrategyPattern.DuckCase.IFlyStrategy;
 
 public class FlyCommand implements ICommand {
 
     private static final Double DEFAULT_HEIGHT = 10.32;
 
-    Duck duck;
+    IFlyStrategy receiver;
     double height;
 
     /**
      * Dependency injection ,
      * inject needed dependencies when instantiating.
-     * @param duck Receiver
+     * @param receiver Receiver
      * @param height param ...
      */
-    public FlyCommand(Duck duck, double height) {
+    public FlyCommand(IFlyStrategy receiver, double height) {
         this.height = height;
-        this.duck = duck;
+        this.receiver = receiver;
     }
 
-    public FlyCommand(Duck duck) {
+    public FlyCommand(IFlyStrategy receiver) {
         this.height = DEFAULT_HEIGHT;
-        this.duck = duck;
+        this.receiver = receiver;
     }
 
     @Override
     public void execute() {
-        duck.fly(height);
-        duck.quack();
+        receiver.fly(height);
     }
 
     @Override
