@@ -19,7 +19,11 @@ public class SilentQuack implements IQuackStrategy {
         }
     }
 
+    /**
+     * 双检查锁
+     */
     public static SilentQuack getSilentQuack() {
+
         if (silentQuack == null) {
             synchronized (SilentQuack.class) {
                 if (silentQuack == null) {

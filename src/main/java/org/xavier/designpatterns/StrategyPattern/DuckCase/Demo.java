@@ -11,5 +11,11 @@ public class Demo {
         Duck duck1 = new Duck(SilentQuack.getSilentQuack(), new JetFly());
         duck1.fly();
         duck1.quack();
+
+        System.out.println("--------------------------------------------------");
+        SilentQuack silentQuack1 = SilentQuack.getSilentQuack();
+        SilentQuack silentQuack2 = SilentQuack.getSilentQuack();
+        System.out.println(silentQuack1);
+        System.out.println(silentQuack2);
     }
 }
