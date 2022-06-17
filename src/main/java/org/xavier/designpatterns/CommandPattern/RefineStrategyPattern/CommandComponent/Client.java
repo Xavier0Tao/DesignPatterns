@@ -9,11 +9,11 @@ public class Client {
         double height = 20.3;
         ICommand flyCommand = new FlyCommand(new Duck(new LoudQuack(), new JetFly()), height);
 
-        Client demo = new Client();
-//        demo.run(flyCommand);
-
         ICommand flyCommand1 = new FlyCommand(new Duck(SilentQuack.getSilentQuack(), new SlowFly()));
-        demo.run(flyCommand1);
+
+        Invoker invoker1 = new Invoker(flyCommand1);
+
+        invoker1.flyRun();
     }
 
     public void run(ICommand command) {
