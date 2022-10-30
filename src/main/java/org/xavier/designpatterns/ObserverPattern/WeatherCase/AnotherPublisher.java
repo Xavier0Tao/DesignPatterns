@@ -2,9 +2,8 @@ package org.xavier.designpatterns.ObserverPattern.WeatherCase;
 
 import java.util.HashSet;
 
-public class WeatherStation implements IObservable {
+public class AnotherPublisher implements IObservable {
     private HashSet<IObserver> collections = new HashSet<>();
-
 
     @Override
     public void add(IObserver observer) {
@@ -18,10 +17,10 @@ public class WeatherStation implements IObservable {
 
     @Override
     public void notifyObservers() {
-        for (IObserver observer :
-                collections) {
-            observer.update();
-            System.out.println(observer);
+        for (IObserver ob : collections) {
+            System.out.println(ob);
         }
+
     }
+
 }

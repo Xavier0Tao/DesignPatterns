@@ -2,6 +2,13 @@ package org.xavier.designpatterns.DecoratorPattern.CoffeCase;
 
 public class Demo {
     public static void main(String[] args) {
+        AbstractBeverage milk = new Milk(new Decaf());
+        System.out.println(milk.description);
+
+
+    }
+
+    private static void test1() {
         Decaf decaf = new Decaf();
         AbstractBeverage beverageWithMilk = new Milk(decaf);
         BeverageDecorator decoratedWithMilk = new Milk(decaf);
@@ -19,6 +26,5 @@ public class Demo {
             decaf1 = new Milk(decaf1);
         }
         System.out.println(decaf1.cost());
-
     }
 }

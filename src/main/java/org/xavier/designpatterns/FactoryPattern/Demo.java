@@ -9,7 +9,8 @@ public class Demo {
 
         ProductFactory factory = new ConcreteFactory1();
         Product product1 = factory.createProduct();
-        ConcreteFactory2 factory2 = new ConcreteFactory2();
+
+        ProductFactory factory2 = new ConcreteFactory2();
         Product product = factory2.createProduct();
         
     }
